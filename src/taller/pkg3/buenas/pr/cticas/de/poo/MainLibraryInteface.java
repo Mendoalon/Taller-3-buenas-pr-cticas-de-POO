@@ -1,10 +1,14 @@
 
 package taller.pkg3.buenas.pr.cticas.de.poo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Luis mendoza
  */
 public interface MainLibraryInteface {
+    public ArrayList defaultPlaylist();
+    
     
 }
