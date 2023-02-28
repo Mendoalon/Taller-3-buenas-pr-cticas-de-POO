@@ -7,10 +7,10 @@ package taller.pkg3.buenas.pr.cticas.de.poo;
  * @author Jaime Hoyos
  */
 public class Songs {
-     private int id;
+    private int id;
     private String title;
     private String date;
-    private String duration;
+    private float duration;
     private String genre;
     private String cover;
     private String description;
@@ -21,7 +21,7 @@ public class Songs {
     public Songs() {
     }
 
-    public Songs(int id, String title,  int day, int month, int year, String duration, String genre, String cover, String description) {
+    public Songs(int id, String title,  int day, int month, int year, float duration, String genre, String cover, String description) {
         this.id = id;
         this.title = title;
         this.date = ( day + "-" + month + "-" + year);
@@ -59,11 +59,11 @@ public class Songs {
         this.date = date;
     }
 
-    public String getDuration() {
+    public float getDuration() {
         return duration;
     }
 
-    public void setDuration(String duration) {
+    public void setDuration(float duration) {
         this.duration = duration;
     }
 

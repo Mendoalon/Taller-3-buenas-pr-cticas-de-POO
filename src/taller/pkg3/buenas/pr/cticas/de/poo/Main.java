@@ -1,5 +1,7 @@
 package taller.pkg3.buenas.pr.cticas.de.poo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Luis mendoza
@@ -11,8 +13,11 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        ArrayList<Songs> Myplaylists = new ArrayList<Songs>();
         MainLibrary  myLista = new MainLibrary();
-        System.out.println(myLista.defaultPlaylist());
+        //System.out.println(myLista.defaultPlaylist());
+        Myplaylists = myLista.defaultPlaylist();
+        System.out.println(myLista.filterSonGen("noexite"));
     }
     
 }

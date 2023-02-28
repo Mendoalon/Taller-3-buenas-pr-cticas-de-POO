@@ -10,6 +10,6 @@ import java.util.ArrayList;
  */
     public interface MainLibraryInteface {
     public ArrayList defaultPlaylist();
-    
+    public ArrayList filterSonGen(String genre);
     
 }
