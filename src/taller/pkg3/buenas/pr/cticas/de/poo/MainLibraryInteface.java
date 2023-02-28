@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * @author Luis mendoza
  * @author Jaime Hoyos
  */
-public interface MainLibraryInteface {
+    public interface MainLibraryInteface {
     public ArrayList defaultPlaylist();
     
     

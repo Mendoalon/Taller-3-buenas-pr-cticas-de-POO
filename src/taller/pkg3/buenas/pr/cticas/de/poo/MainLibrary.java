@@ -2,6 +2,7 @@
 package taller.pkg3.buenas.pr.cticas.de.poo;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -23,8 +24,22 @@ public class MainLibrary  implements MainLibraryInteface{
         playlists.add(new Songs(7,"Despacito",23,03,2017,"05:26","pop","Despacito.png","cancion de  Fonsi ft Daddy Yankee"));
         playlists.add(new Songs(8,"Algo que se quede",18,01,2018,"03:30","salsa","Algo que se quede.png","cancion de la nueva era del grupo niche"));
         playlists.add(new Songs(9,"procura",15,07,1997,"05:26","salsa","procura.png","cancion de amor de el chichi peralta"));
-        playlists.add(new Songs(10,"Ojitos lindos",29,12,2020,"03:34","regueton","Ojitos lindos.png","cancion de el nuevo album un verano sin ti"));
+        playlists.add(new Songs(10,"Ojitos lindos",29,12,2020,"03:34","regueton","Ojitos lindos.png","cancion de el nuevo album un verano sin ti"));    
         return  playlists;
     }
     
-}
+    /*public ArrayList filterbygenre(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingrese el género a filtrar: ");
+        String filterGener = scanner.nextLine();
+        for (Songs songs : playlists) {
+            if (songs.getGenre().equalsIgnoreCase(filterGener)) {
+                playlists.add(songs);
+            }
+        }
+        return playlists;
+    }*/
+    
+     
+    }
+

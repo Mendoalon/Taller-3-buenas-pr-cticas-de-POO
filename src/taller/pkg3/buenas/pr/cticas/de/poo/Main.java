@@ -11,7 +11,8 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+        MainLibrary  myLista = new MainLibrary();
+        System.out.println(myLista.defaultPlaylist());
     }
     
 }
