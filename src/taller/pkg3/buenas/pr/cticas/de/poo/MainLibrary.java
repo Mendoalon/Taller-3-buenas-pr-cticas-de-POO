@@ -29,7 +29,7 @@ public class MainLibrary implements MainLibraryInteface {
 
     @Override
     public ArrayList filterSonGen(String genre) {
-         ArrayList<String> songGenre = new ArrayList<String>();
+        ArrayList<String> songGenre = new ArrayList<String>();
         playlists.forEach((Songs song) -> {
             if (song.getGenre().contentEquals(genre)) {
                 songGenre.add(song.toString());
