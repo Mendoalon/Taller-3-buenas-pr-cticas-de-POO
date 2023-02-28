@@ -37,6 +37,20 @@ public class MainLibrary implements MainLibraryInteface {
         });
         return songGenre;
     }
+    
+    @Override
+    public ArrayList filterSonYear(int year) {
+        ArrayList<Songs> songYear = new ArrayList<Songs>();
+
+        playlists.forEach((Songs song) -> {
+            if (song.getYear() == year) {
+                songYear.add(song);
+            }
+        });
+        
+        return songYear;
+    }
+    
 
 }
 

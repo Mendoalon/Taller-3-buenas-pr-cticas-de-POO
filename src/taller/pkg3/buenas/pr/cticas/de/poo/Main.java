@@ -14,10 +14,17 @@ public class Main {
      */
     public static void main(String[] args) {
         ArrayList<Songs> Myplaylists = new ArrayList<Songs>();
+        
         MainLibrary  myLista = new MainLibrary();
+        
         //System.out.println(myLista.defaultPlaylist());
+        
         Myplaylists = myLista.defaultPlaylist();
-        System.out.println(myLista.filterSonGen("noexite"));
+        
+        //System.out.println(myLista.filterSonGen("vallenato"));
+        
+        System.out.println( myLista.filterSonYear(1979));
+        
     }
     
 }

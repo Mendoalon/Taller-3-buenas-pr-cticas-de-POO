@@ -9,7 +9,11 @@ import java.util.ArrayList;
  * @author Jaime Hoyos
  */
     public interface MainLibraryInteface {
+        
     public ArrayList defaultPlaylist();
+    
     public ArrayList filterSonGen(String genre);
+    
+    public ArrayList filterSonYear(int yeard);
     
 }
