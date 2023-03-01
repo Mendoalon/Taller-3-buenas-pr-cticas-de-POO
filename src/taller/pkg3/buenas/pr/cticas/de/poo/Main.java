@@ -1,5 +1,4 @@
 package taller.pkg3.buenas.pr.cticas.de.poo;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -15,8 +14,8 @@ public class Main {
      */
     public static void main(String[] args) {
         ArrayList<Songs> Myplaylists = new ArrayList<>();
-<<<<<<< HEAD
         MainLibrary myList = new MainLibrary();
+        myList.defaultPlaylist();
         Scanner input = new Scanner(System.in);
         int option;
         do {
@@ -36,24 +35,10 @@ public class Main {
                 case 1 -> System.out.println(myList.defaultPlaylist());
                 case 2 -> System.out.println(myList.filterSonGen("pop"));
                 case 3 -> System.out.println(myList.filterSonYear(1956));
-                case 4 -> System.out.println(myList.orderByduration());
-                case 5 -> System.out.println("");
-                default -> System.out.println("opcion no encontrada");
+                case 4 -> myList.SortDuration();
+                case 5 -> myList.SortDate();
             }
 
         } while (option != 0);
-=======
-
-        MainLibrary myLista = new MainLibrary();
-
-       myLista.defaultPlaylist();
-
-        //Myplaylists = myLista.defaultPlaylist();
-        //System.out.println(myLista.filterSonGen("vallenato"));
-        //System.out.println( myLista.filterSonYear(1979));
-        //myLista.orderByduration();
-        
-        myLista.SortDate();
->>>>>>> d967e9fcc4bd768be89df0dcb3c5aad37866cc08
     }
 }

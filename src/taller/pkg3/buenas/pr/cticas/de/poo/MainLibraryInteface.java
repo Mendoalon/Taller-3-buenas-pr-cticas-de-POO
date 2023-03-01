@@ -16,7 +16,7 @@ import java.util.ArrayList;
     
     public ArrayList filterSonYear(int yeard);
     
-    public void orderByduration();
+    public void SortDuration();
     
-       public void SortDate();
+    public void SortDate();
 }
