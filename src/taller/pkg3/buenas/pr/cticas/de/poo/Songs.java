@@ -117,7 +117,7 @@ public class Songs {
 
     @Override
     public String toString() {
-        return "Canción: " + "identificador = " + id + ", titulo = " + title + ", fecha = " + date + ", duración = " + duration + ", genero = " + genre + ", caratula = " + cover + ", descripción = " + description + '.';
+        return "Canción: " + "identificador = " + id + ", titulo = " + title + ", fecha = " + date + ", duración = " + duration + ", genero = " + genre + ", caratula = " + cover + ", descripción = " + description ;
     }
 
     

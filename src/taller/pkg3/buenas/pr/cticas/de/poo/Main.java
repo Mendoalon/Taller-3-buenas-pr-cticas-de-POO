@@ -1,5 +1,7 @@
 package taller.pkg3.buenas.pr.cticas.de.poo;
+
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -9,36 +11,77 @@ import java.util.Scanner;
  */
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        ArrayList<Songs> Myplaylists = new ArrayList<>();
-        MainLibrary myList = new MainLibrary();
-        myList.defaultPlaylist();
-        Scanner input = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<Songs> myPlayLists = new ArrayList();
+        MainLibrary myLista = new MainLibrary();
+
         int option;
-        do {
-            option = 0;
-            System.out.println("LOGIN EXITOSO");
-            System.out.println("=======================");
-            System.out.println("Presione el numero segun su opcion de preferencia");
-            System.out.println("1. Mostrar toda la biblioteca");
-            System.out.println("2. Filtrar sus canciones por genero especifico");
-            System.out.println("3. Filtrar cancion por el anio de lanzamiento");
-            System.out.println("4. Ordenar cacanciones por su duracion");
-            System.out.println("5. Ordenar las canciones segun su fecha");
-            System.out.println("0. para salir");
-            System.out.print("Digite la opcion de su preferencia: ");
-            option = input.nextInt();
-            switch (option) {
-                case 1 -> System.out.println(myList.defaultPlaylist());
-                case 2 -> System.out.println(myList.filterSonGen("pop"));
-                case 3 -> System.out.println(myList.filterSonYear(1956));
-                case 4 -> myList.SortDuration();
-                case 5 -> myList.SortDate();
+        boolean exit = false;
+
+        System.out.println("==== Bienvenido a la aplicación Sofka Music ====");
+        System.out.println("Aplicación donde podrá ver las ultima canciones lanzadas.");
+
+        while (!exit)
+        {
+            System.out.println("Menu:\n1. Mostrar todas las canciones de la biblioteca. \n2. Mostrar Canciones por género.");
+            System.out.println("3. Mostrar Canciones por año de lanzamiento. \n4. Ordenar canciones por duración");
+            System.out.println("5. Ordenar canciones por fecha. \n6. Para salir de la aplicación.");
+
+            try
+            {
+                myPlayLists.addAll(myLista.defaultPlaylist());
+
+                System.out.println("¿Seleccione una opción?");
+                option = scanner.nextInt();
+
+                switch (option)
+                {
+
+                    case 1:
+                        myLista.showSongList(myPlayLists);
+                        break;
+
+                    case 2:
+                        for (Songs SongGenre : myLista.filterSonGen("salsa", myPlayLists))
+                        {
+                            System.out.println(SongGenre);
+                        }
+                        break;
+
+                    case 3:
+                        for (Object SongYear : myLista.filterSonYear(2017))
+                        {
+                            System.out.println(SongYear);
+                        }
+                        break;
+
+                    case 4:
+                        myLista.SortDuration(myPlayLists);
+                        break;
+
+                    case 5:
+                        myLista.SortDate(myPlayLists);
+                        break;
+
+                    case 6:
+                        System.out.println("¡Ha salido de la aplicación, vuelva pronto!");
+                        exit = true;
+                        break;
+
+                    default:
+
+                        System.out.println("Las opciones son entre 1 y 6");
+
+                }
+
+            } catch (InputMismatchException e)
+            {
+                System.out.println("Debe ingresar un número");
+                scanner.next();
             }
 
-        } while (option != 0);
+        }
+
     }
 }
