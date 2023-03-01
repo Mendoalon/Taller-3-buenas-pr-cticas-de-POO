@@ -1,7 +1,16 @@
 package taller.pkg3.buenas.pr.cticas.de.poo;
 
+/**
+ * Libreria que nos permitite durante el programa
+ */
 import java.util.ArrayList;
+/**
+ * Libreria que nos permite usar coleciones durante el programa
+ */
 import java.util.Collections;
+/**
+ * Libreria que nos permire utilizar la entrada por teclado durante el programa
+ */
 import java.util.Scanner;
 
 /**
@@ -9,11 +18,30 @@ import java.util.Scanner;
  * @author Luis mendoza
  * @author Jaime Hoyos
  */
+/**
+ * Se crea clase mainLibrary si se implementa la interfaz MainLibraryInteface
+ *
+ */
 public class MainLibrary implements MainLibraryInteface {
 
+    /**
+     * Creamos un campo de tipo playlist que es una instancia de un Arratlist
+     * que tiene como parametros la clase Songs
+     *
+     * @param Songs
+     */
     private ArrayList<Songs> playlists = new ArrayList<Songs>();
+    /**
+     * Incializamos la libreria Scanner y recibe por parametros una intrada por
+     * teclado
+     */
     Scanner scanner = new Scanner(System.in);
 
+    /**
+     * Creamos la biiblioteca principal y le asignamos valores de la clase songs
+     *
+     * @return playlist
+     */
     @Override
     public ArrayList defaultPlaylist() {
 
@@ -37,6 +65,12 @@ public class MainLibrary implements MainLibraryInteface {
 
     }
 
+    /**
+     * sobre escribimo el metodo showList y recoremos el arraylist de playlist y
+     * imprimos sus valores
+     *
+     * @param songs
+     */
     @Override
     public void showSongList(ArrayList<Songs> songs) {
 
@@ -45,51 +79,105 @@ public class MainLibrary implements MainLibraryInteface {
         }
     }
 
+    /**
+     * Sobrescribimos metodo filterSonGen y le pasamos como parametros la
+     * playlist creada
+     *
+     * @param playList
+     */
     @Override
     public void filterSonGen(ArrayList<Songs> playList) {
+        /**
+         * Se crea un parametro de tipo array llamado songGenre
+         */
         ArrayList<Songs> songGenre = new ArrayList<Songs>();
-
+        /**
+         * Se le pide a al usuario el genero a filtrar
+         */
         System.out.print("Ingrese el género de las canciones que desea ver: ");
+        /**
+         * a la variable genre le pasamos la informacion ingresada por el usario
+         */
         String genre = scanner.nextLine();
-
+        /**
+         * Recorremos el array con los parametros de la clase Songs
+         */
         playList.forEach((Songs song) -> {
+            /**
+             * Si el generero de la cancion en la plylist es igual a la varible
+             * genre se agrega a la cancion al array
+             */
             if (song.getGenre().contentEquals(genre)) {
                 songGenre.add(song);
             }
         });
-
+        /**
+         * Si el array no se encuentra vacio se impreme las canciones que tenga
+         * el mismo genereo ingresado por el usuario
+         */
         if (songGenre.size() > 0) {
             songGenre.forEach((soung) -> {
                 System.out.println(soung);
             });
+            /**
+             * En tal caso de no coincidencia o genero vacio se impreme la
+             * leyenda de que no se encontro genero ingresado
+             */
         } else {
             System.out.println("No se encuentra el genero ingresado.");
         }
 
     }
 
+    /**
+     * Sobrescribimos el metodo de filterSonYear cancion por año
+     *
+     * @param playList
+     */
     @Override
     public void filterSonYear(ArrayList<Songs> playList) {
+        /**
+         * Se crea un parametro de tipo array llamado songYear
+         */
         ArrayList<Songs> songYear = new ArrayList<Songs>();
-
+        /**
+         * Se obtiene el año que ingresa el usuario se maneja la excepcion en
+         * caso de que se ingrese string
+         */
         try {
+            /**
+             * Pedimos al usario el año a filtrar y se lo pasamos a la varible
+             * yerars
+             */
             System.out.print("Ingrese el año que desea filtrar: ");
             int years = scanner.nextInt();
-
+            /**
+             * Recorremos el array en tal caso que el año ingresado en la
+             * playlist ((song.getYear()) se igual al año ingresado por el
+             * usario agregamos al array las canciones con dicho año
+             */
             playlists.forEach((Songs song) -> {
                 if (song.getYear() == years) {
                     songYear.add(song);
                 }
             });
-
+            /**
+             * Si el array no se encuntra vacio se imprime todas las caciones
+             * que tengan el mismo año
+             */
             if (songYear.size() > 0) {
                 songYear.forEach((soung) -> {
                     System.out.println(soung);
                 });
+                /**
+                 * En caso contrario se pasa la leyenda de genero no encontrado
+                 */
             } else {
                 System.out.println("No se encuentra el año ingresado.");
             }
-
+            /**
+             * Se maneja la excepcion de quue solo ingrese numero
+             */
         } catch (Exception e) {
             System.out.println("Ingre el año en numeros.");
             scanner.next();
@@ -97,19 +185,41 @@ public class MainLibrary implements MainLibraryInteface {
 
     }
 
+    /**
+     * Sobre escribimos el genero SortDuration y utilizamos la funcion
+     * collections pasamos la playlist y el metodo ComparebyDuration que nos
+     * permite ordenar las canciones
+     *
+     * @param playList
+     * @param CompareByDuration
+     */
     @Override
     public void SortDuration(ArrayList<Songs> playList) {
         Collections.sort(playList, new CompareByDuration());
-
+        /**
+         * Recoremos el array y mostramos todas las canciones ordenadas desde la
+         * mas corta a la mas larga
+         */
         for (Songs songs : playList) {
             System.out.println(songs);
         }
     }
 
+    /**
+     * *
+     * Sobre escribimos el genero SortDuration y la pasamos la playlist
+     * utilizamos la funcion collections pasamos y el metodo CompaByDate que nos
+     * permite ordenar las fechas de las canciones
+     *
+     * @param playList CompaByDate
+     */
     @Override
     public void SortDate(ArrayList<Songs> playList) {
         Collections.sort(playList, new CompaByDate());
-
+        /**
+         * Recoremos el array y mostramos todas las canciones ordenadas desde la
+         * mas reciente a la mas antigua
+         */
         for (Songs songs : playList) {
             System.out.println(songs);
         }
