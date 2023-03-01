@@ -15,6 +15,7 @@ public class Main {
      */
     public static void main(String[] args) {
         ArrayList<Songs> Myplaylists = new ArrayList<>();
+<<<<<<< HEAD
         MainLibrary myList = new MainLibrary();
         Scanner input = new Scanner(System.in);
         int option;
@@ -41,5 +42,18 @@ public class Main {
             }
 
         } while (option != 0);
+=======
+
+        MainLibrary myLista = new MainLibrary();
+
+       myLista.defaultPlaylist();
+
+        //Myplaylists = myLista.defaultPlaylist();
+        //System.out.println(myLista.filterSonGen("vallenato"));
+        //System.out.println( myLista.filterSonYear(1979));
+        //myLista.orderByduration();
+        
+        myLista.SortDate();
+>>>>>>> d967e9fcc4bd768be89df0dcb3c5aad37866cc08
     }
 }

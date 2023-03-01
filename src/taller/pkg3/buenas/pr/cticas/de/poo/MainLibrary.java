@@ -54,6 +54,7 @@ public class MainLibrary implements MainLibraryInteface {
     }
 
     @Override
+<<<<<<< HEAD
     public ArrayList orderByduration() {
       Collections.sort(playlists,(Songs song1,Songs song2) -> new Float(song1.getDuration()).compareTo(song1.getDuration()));
       for (Songs myPlaylist : playlists) {
@@ -61,7 +62,25 @@ public class MainLibrary implements MainLibraryInteface {
             
         }
       return playlists;
+=======
+    public void orderByduration() {
+      Collections.sort(playlists,(Songs p1,Songs p2) -> new Float(p1.getDuration()).compareTo(p2.getDuration()));
+ 
+      
+>>>>>>> d967e9fcc4bd768be89df0dcb3c5aad37866cc08
     }
+
+    @Override
+    public void SortDate() {
+        Collections.sort(playlists, new CompaByDate(false));
+
+          for (Songs songs : playlists) {
+               System.out.println( songs.toString());
+        }
+    }
+    
+    
+    
   
 }
 
