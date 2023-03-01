@@ -13,9 +13,9 @@ public interface MainLibraryInteface {
 
     public void showSongList(ArrayList<Songs> songs);
 
-    public ArrayList filterSonGen(String genre, ArrayList<Songs> playList);
+    public void filterSonGen(ArrayList<Songs> playList);
 
-    public ArrayList filterSonYear(int yeard);
+    public void filterSonYear(ArrayList<Songs> playList);
 
     public void SortDuration(ArrayList<Songs> songs);
 

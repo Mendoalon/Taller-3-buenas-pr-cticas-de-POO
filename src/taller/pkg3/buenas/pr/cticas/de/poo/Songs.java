@@ -7,6 +7,7 @@ package taller.pkg3.buenas.pr.cticas.de.poo;
  * @author Jaime Hoyos
  */
 public class Songs {
+    
     private int id;
     private String title;
     private String date;
@@ -31,8 +32,7 @@ public class Songs {
         this.duration = duration;
         this.genre = genre;
         this.cover = cover;
-        this.description = description;
-      
+        this.description = description;  
     }
 
     public int getId() {

@@ -14,46 +14,37 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Songs> myPlayLists = new ArrayList();
+        
         MainLibrary myLista = new MainLibrary();
+        myPlayLists.addAll(myLista.defaultPlaylist());
 
         int option;
         boolean exit = false;
 
         System.out.println("==== Bienvenido a la aplicación Sofka Music ====");
-        System.out.println("Aplicación donde podrá ver las ultima canciones lanzadas.");
+        System.out.println("Aplicación donde podrá ver una  biblioteca de canciones.");
 
-        while (!exit)
-        {
+        while (!exit) {
             System.out.println("Menu:\n1. Mostrar todas las canciones de la biblioteca. \n2. Mostrar Canciones por género.");
             System.out.println("3. Mostrar Canciones por año de lanzamiento. \n4. Ordenar canciones por duración");
             System.out.println("5. Ordenar canciones por fecha. \n6. Para salir de la aplicación.");
 
-            try
-            {
-                myPlayLists.addAll(myLista.defaultPlaylist());
-
+            try { 
                 System.out.println("¿Seleccione una opción?");
                 option = scanner.nextInt();
 
-                switch (option)
-                {
+                switch (option) {
 
                     case 1:
                         myLista.showSongList(myPlayLists);
                         break;
 
                     case 2:
-                        for (Songs SongGenre : myLista.filterSonGen("salsa", myPlayLists))
-                        {
-                            System.out.println(SongGenre);
-                        }
+                         myLista.filterSonGen(myPlayLists);
                         break;
 
                     case 3:
-                        for (Object SongYear : myLista.filterSonYear(2017))
-                        {
-                            System.out.println(SongYear);
-                        }
+                        myLista.filterSonYear(myPlayLists);
                         break;
 
                     case 4:
@@ -70,13 +61,11 @@ public class Main {
                         break;
 
                     default:
-
                         System.out.println("Las opciones son entre 1 y 6");
 
                 }
 
-            } catch (InputMismatchException e)
-            {
+            } catch (InputMismatchException e) {
                 System.out.println("Debe ingresar un número");
                 scanner.next();
             }

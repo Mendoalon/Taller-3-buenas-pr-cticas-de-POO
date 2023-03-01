@@ -2,6 +2,7 @@ package taller.pkg3.buenas.pr.cticas.de.poo;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Scanner;
 
 /**
  *
@@ -9,96 +10,109 @@ import java.util.Collections;
  * @author Jaime Hoyos
  */
 public class MainLibrary implements MainLibraryInteface {
+
     private ArrayList<Songs> playlists = new ArrayList<Songs>();
-    
+    Scanner scanner = new Scanner(System.in);
 
     @Override
     public ArrayList defaultPlaylist() {
-        
-        playlists.add(new Songs(1, "Discovering the Waterfront", 13, 03, 2021, 3.35F, "pop", "love.jpg  ", "description 1"));
-        playlists.add(new Songs(2, "Oh  my  Love", 9, 9, 2005, 3.81F, "pop", "JhonL.jpg", "description 2"));
-        playlists.add(new Songs(3, "Beat It", 22, 3, 1982, 4.58F, "pop      ", "Michael Jackson", "description 3"));
-        playlists.add(new Songs(4, "Despacito", 12, 1, 2017, 3.22F, "reggeaton", "Fonsy.jpg", "description 4"));
-        playlists.add(new Songs(5, "Oye", 12, 1, 2017, 4.21F, "hip-Hop", "vico C.jpg", "description 5"));
-        playlists.add(new Songs(6, "Pump It Harder", 17, 1, 2006, 2.01F, "hip-hop", "Black Eyed Peas.jpg", "description 6"));
-        playlists.add(new Songs(7, "Without Me", 2, 6, 2002, 4.57F, "hip-hop", "Eminem.jpg", "description 7"));
-        playlists.add(new Songs(8, "Still D.R.E.", 16, 11, 2001, 4.54F, "hip-hop", "Dr. Dre", "description 8"));
-        playlists.add(new Songs(9, "Lo grande que es perdonar", 22, 6, 2005, 4.41F, "pop      ", "Vico+Santa.jpg", "description 9"));
-        playlists.add(new Songs(10, "Let There Be Rock", 27, 7, 1977, 6.09F, "rock", "AC-DC.jpg", "description 10"));
+
+        playlists.add(new Songs(1, "Blinding Lights", 29, 11, 2019, 4.26f, "pop", "Blinding Lights.png", "cancion de the weekend"));
+        playlists.add(new Songs(2, "Shape of You", 06, 01, 2017, 3.26f, "pop", "Shape of You.png", "cancion de Ed Sherman con mas 4 milones de vistas"));
+        playlists.add(new Songs(3, "That's What I Like", 18, 11, 2016, 4.20f, "pop", "That's What I Like.png", "cancion de Bruno Mars para su album 24K Magic"));
+        playlists.add(new Songs(4, "Yandel 150", 25, 01, 2023, 3.45f, "regueton", "Ynadel150.png", "el nuevo duo dinamico se junta en este nuevo tema"));
+        playlists.add(new Songs(5, "Dont Stop Me Now", 26, 01, 1979, 2.26f, "Jazz", "Dont Stop Me Now.png", "la nueva cancion de Queen"));
+        playlists.add(new Songs(6, "En el dia 300", 12, 10, 2017, 3.27f, "vallenato", "en el dia 300.png", "cancion que habla del desamor"));
+        playlists.add(new Songs(7, "Despacito", 23, 03, 2017, 5.26f, "pop", "Despacito.png", "cancion de  Fonsi ft Daddy Yankee"));
+        playlists.add(new Songs(8, "Algo que se quede", 18, 01, 2018, 3.30f, "salsa", "Algo que se quede.png", "cancion de la nueva era del grupo niche"));
+        playlists.add(new Songs(9, "procura", 15, 07, 1997, 4.08f, "salsa", "procura.png", "cancion de amor de el chichi peralta"));
+        playlists.add(new Songs(10, "Ojitos lindos", 29, 12, 2020, 3.34f, "regueton", "Ojitos lindos.png", "cancion de el nuevo album un verano sin ti"));
         playlists.add(new Songs(11, "Stairway to Heaven", 18, 12, 1970, 8.06F, "rock", "Led Zeppelin.jpg", "description 11"));
         playlists.add(new Songs(12, "Bohemian Rhapsody", 19, 7, 1974, 5.55F, "rock", "Queen.jpg", "description 12"));
         playlists.add(new Songs(13, "November Rain", 27, 11, 1990, 8.57F, "rock", "Guns N' Roses.jpg", "description 13"));
         playlists.add(new Songs(14, "El Cepillo", 21, 11, 1997, 4.22F, "merengue", "Fulanito.jpg", "description 14"));
         playlists.add(new Songs(15, "Abusadora", 13, 4, 2016, 4.49F, "merengue", "Oro Solido.jpg", "description 15"));
-        playlists.add(new Songs(16, "Tu Eres Ajena", 14, 9, 2001, 4.53F, "merengue", "Eddy Herrera.jpg", "description 16"));
-        playlists.add(new Songs(17, "Ella Es Tan Bella", 9, 2, 2007, 4.23F, "merengue", "Rikarena.jpg", "description 17"));
-        playlists.add(new Songs(18, "Busca Por Dentro", 8, 6, 1990, 5.54F, "salsa", "Grupo Niche.jpg", "description 18"));
-        playlists.add(new Songs(19, "El Cantante", 26, 1, 1998, 10.20F, "salsa", "Hector Lavoe.jpg", "description 19"));
-        playlists.add(new Songs(20, "Pedro Navaja", 1, 1, 1983, 7.22F, "salsa", "Willie Colon-Ruben Blades.jpg", "description 20"));
-        playlists.add(new Songs(21, "Esos Ojitos Negros", 20, 4, 1987, 4.34F, "salsa", "El Gran Combo de Puerto Rico.jpg", "description 21"));
 
         return playlists;
-        
 
-    }
-    
-     @Override
-    public void showSongList(ArrayList<Songs> songs) {
-        
-        for (Songs playlist : songs) {
-            System.out.println(playlist);
-        }
-        
     }
 
     @Override
-    public ArrayList<Songs> filterSonGen(String genre, ArrayList<Songs> playList ) {
-          ArrayList<Songs> songGenre = new ArrayList<Songs>();
-    
-       
-        
-        
+    public void showSongList(ArrayList<Songs> songs) {
+
+        for (Songs playlist : songs) {
+            System.out.println(playlist);
+        }
+    }
+
+    @Override
+    public void filterSonGen(ArrayList<Songs> playList) {
+        ArrayList<Songs> songGenre = new ArrayList<Songs>();
+
+        System.out.print("Ingrese el género de las canciones que desea ver: ");
+        String genre = scanner.nextLine();
+
         playList.forEach((Songs song) -> {
             if (song.getGenre().contentEquals(genre)) {
                 songGenre.add(song);
             }
         });
-        
-        return songGenre;
+
+        if (songGenre.size() > 0) {
+            songGenre.forEach((soung) -> {
+                System.out.println(soung);
+            });
+        } else {
+            System.out.println("No se encuentra el genero ingresado.");
+        }
+
     }
 
     @Override
-    public ArrayList filterSonYear(int year) {
+    public void filterSonYear(ArrayList<Songs> playList) {
         ArrayList<Songs> songYear = new ArrayList<Songs>();
 
-        playlists.forEach((Songs song) -> {
-            if (song.getYear() == year) {
-                songYear.add(song);
+        try {
+            System.out.print("Ingrese el año que desea filtrar: ");
+            int years = scanner.nextInt();
+
+            playlists.forEach((Songs song) -> {
+                if (song.getYear() == years) {
+                    songYear.add(song);
+                }
+            });
+
+            if (songYear.size() > 0) {
+                songYear.forEach((soung) -> {
+                    System.out.println(soung);
+                });
+            } else {
+                System.out.println("No se encuentra el año ingresado.");
             }
-        });
 
-        return songYear;
+        } catch (Exception e) {
+            System.out.println("Ingre el año en numeros.");
+            scanner.next();
+        }
+
     }
 
     @Override
-    public void SortDuration(ArrayList<Songs> songDuration) {
-        Collections.sort(songDuration, new compareByDuration());
-        
-        for (Songs songs : songDuration) {
-            System.out.println(songs);
-        }
-        
-    }
-    
-    @Override
-    public void SortDate(ArrayList<Songs> songDate) {
-        Collections.sort(songDate, new CompaByDate());
+    public void SortDuration(ArrayList<Songs> playList) {
+        Collections.sort(playList, new CompareByDuration());
 
-        for (Songs songs : songDate) {
+        for (Songs songs : playList) {
             System.out.println(songs);
         }
     }
-        
+
+    @Override
+    public void SortDate(ArrayList<Songs> playList) {
+        Collections.sort(playList, new CompaByDate());
+
+        for (Songs songs : playList) {
+            System.out.println(songs);
+        }
+    }
+
 }
-
-

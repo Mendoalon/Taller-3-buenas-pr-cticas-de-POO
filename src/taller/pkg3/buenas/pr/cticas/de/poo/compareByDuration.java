@@ -4,18 +4,23 @@ import java.util.Comparator;
 
 /**
  *
- * @author JAIME
+ * @author Luis mendoza
+ * @author Jaime Hoyos
  */
-public class compareByDuration implements Comparator <Songs> {
-    
+public class CompareByDuration implements Comparator<Songs> {
+
     @Override
     public int compare(Songs song1, Songs song2) {
+
         int send = 0;
-        if(song1.getDuration() > song2.getDuration()){
-        send = 1;
-        }else if(song1.getDuration() < song2.getDuration()){
-        send = -1;
+
+        if (song1.getDuration() > song2.getDuration()) {
+            send = 1;
+
+        } else if (song1.getDuration() < song2.getDuration()) {
+            send = -1;
         }
+        
         return send;
-    }    
+    }
 }
