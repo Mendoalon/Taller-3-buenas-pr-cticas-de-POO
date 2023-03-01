@@ -2,7 +2,7 @@ package taller.pkg3.buenas.pr.cticas.de.poo;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
+
 
 /**
  *
@@ -53,14 +53,23 @@ public class MainLibrary implements MainLibraryInteface {
     }
 
     @Override
-    public ArrayList orderByduration() {
+    public void orderByduration() {
       Collections.sort(playlists,(Songs p1,Songs p2) -> new Float(p1.getDuration()).compareTo(p2.getDuration()));
-      for (Songs myPlaylist : playlists) {
-          System.out.println(myPlaylist.getTitle() + " - " + myPlaylist.getDuration());
-            
-        }
-      return playlists;
+ 
+      
     }
+
+    @Override
+    public void SortDate() {
+        Collections.sort(playlists, new CompaByDate(false));
+
+          for (Songs songs : playlists) {
+               System.out.println( songs.toString());
+        }
+    }
+    
+    
+    
   
 }
 
